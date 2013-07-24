@@ -5,7 +5,7 @@ twMVC-10-1
 
 ASP.NET MVC Model 的設計與使用
 
-講者：Kevin Tseng
+講者：Kevin Tseng（2013 Microsoft MVP、twMVC核心講者）
 
 課程簡介：
 
