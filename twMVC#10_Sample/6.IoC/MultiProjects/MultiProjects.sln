@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Domain", "1.Domain", "{049A350A-90FF-47C6-A42A-9EA44D3ADC98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Repository.Interface", "2.Repository.Interface", "{B3194F24-F0DC-439E-B782-AC326E500F29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Repository.Implement", "3.Repository.Implement", "{BB1215E4-E3BE-48CF-9051-AD75C78A8706}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Web", "4.Web", "{C230FF98-F0CC-4FE2-A865-24A7B64202F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Domain", "MultiProjects.Domain\MultiProjects.Domain.csproj", "{85DBF68F-73D8-4E70-9454-ED153D9C3DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Repository.Interface", "MultiProjects.Repository.Interface\MultiProjects.Repository.Interface.csproj", "{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Repository.ADONET", "MultiProjects.Repository.ADONET\MultiProjects.Repository.ADONET.csproj", "{1479F3CE-4A16-46E6-B807-56898B20A4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Repository.EntLibDAAB", "MultiProjects.Repository.EntLibDAAB\MultiProjects.Repository.EntLibDAAB.csproj", "{D669F16D-AAAD-4862-B150-5BABABB7F2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Repository.EF", "MultiProjects.Repository.EF\MultiProjects.Repository.EF.csproj", "{71CFE44B-C239-425D-9AD5-C27A1BD36AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiProjects.Web.MVC", "MultiProjects.Web.MVC\MultiProjects.Web.MVC.csproj", "{6FB8CE8B-4FEA-4D24-9642-0A82143CA620}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7E8F3F8E-B4BA-410B-80F4-5443B1A4390A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85DBF68F-73D8-4E70-9454-ED153D9C3DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85DBF68F-73D8-4E70-9454-ED153D9C3DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85DBF68F-73D8-4E70-9454-ED153D9C3DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85DBF68F-73D8-4E70-9454-ED153D9C3DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1479F3CE-4A16-46E6-B807-56898B20A4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1479F3CE-4A16-46E6-B807-56898B20A4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1479F3CE-4A16-46E6-B807-56898B20A4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1479F3CE-4A16-46E6-B807-56898B20A4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D669F16D-AAAD-4862-B150-5BABABB7F2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D669F16D-AAAD-4862-B150-5BABABB7F2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D669F16D-AAAD-4862-B150-5BABABB7F2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D669F16D-AAAD-4862-B150-5BABABB7F2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CFE44B-C239-425D-9AD5-C27A1BD36AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CFE44B-C239-425D-9AD5-C27A1BD36AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CFE44B-C239-425D-9AD5-C27A1BD36AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CFE44B-C239-425D-9AD5-C27A1BD36AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB8CE8B-4FEA-4D24-9642-0A82143CA620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB8CE8B-4FEA-4D24-9642-0A82143CA620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB8CE8B-4FEA-4D24-9642-0A82143CA620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB8CE8B-4FEA-4D24-9642-0A82143CA620}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85DBF68F-73D8-4E70-9454-ED153D9C3DFF} = {049A350A-90FF-47C6-A42A-9EA44D3ADC98}
+		{DC4C2C72-2E73-49AF-9194-3100A2BE5C2A} = {B3194F24-F0DC-439E-B782-AC326E500F29}
+		{1479F3CE-4A16-46E6-B807-56898B20A4BD} = {BB1215E4-E3BE-48CF-9051-AD75C78A8706}
+		{D669F16D-AAAD-4862-B150-5BABABB7F2E0} = {BB1215E4-E3BE-48CF-9051-AD75C78A8706}
+		{71CFE44B-C239-425D-9AD5-C27A1BD36AA8} = {BB1215E4-E3BE-48CF-9051-AD75C78A8706}
+		{6FB8CE8B-4FEA-4D24-9642-0A82143CA620} = {C230FF98-F0CC-4FE2-A865-24A7B64202F8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

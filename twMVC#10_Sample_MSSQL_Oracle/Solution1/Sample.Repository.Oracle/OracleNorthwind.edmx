@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OracleModel.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="OracleModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="OracleModel.Store.Categories" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Customers" EntityType="OracleModel.Store.Customers" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Employees" EntityType="OracleModel.Store.Employees" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="EmployeesTerritories" EntityType="OracleModel.Store.EmployeesTerritories" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="InternationalOrders" EntityType="OracleModel.Store.InternationalOrders" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="OracleDataTypes" EntityType="OracleModel.Store.OracleDataTypes" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="OrderDetails" EntityType="OracleModel.Store.OrderDetails" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Orders" EntityType="OracleModel.Store.Orders" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="PreviousEmployees" EntityType="OracleModel.Store.PreviousEmployees" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Products" EntityType="OracleModel.Store.Products" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Regions" EntityType="OracleModel.Store.Regions" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Shippers" EntityType="OracleModel.Store.Shippers" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Suppliers" EntityType="OracleModel.Store.Suppliers" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <EntitySet Name="Territories" EntityType="OracleModel.Store.Territories" store:Type="Tables" Schema="NORTHWIND_USER" />
+          <AssociationSet Name="SYS_C007011" Association="OracleModel.Store.SYS_C007011">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007013" Association="OracleModel.Store.SYS_C007013">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007014" Association="OracleModel.Store.SYS_C007014">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007024" Association="OracleModel.Store.SYS_C007024">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007025" Association="OracleModel.Store.SYS_C007025">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007033" Association="OracleModel.Store.SYS_C007033">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Territories" EntitySet="Territories" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007040" Association="OracleModel.Store.SYS_C007040">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007041" Association="OracleModel.Store.SYS_C007041">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007045" Association="OracleModel.Store.SYS_C007045">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeesTerritories" EntitySet="EmployeesTerritories" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007046" Association="OracleModel.Store.SYS_C007046">
+            <End Role="Territories" EntitySet="Territories" />
+            <End Role="EmployeesTerritories" EntitySet="EmployeesTerritories" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007051" Association="OracleModel.Store.SYS_C007051">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="InternationalOrders" EntitySet="InternationalOrders" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="CategoryName" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="Description" Type="varchar2" MaxLength="1000" />
+          <Property Name="Picture" Type="raw" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="varchar2" Nullable="false" MaxLength="5" />
+          <Property Name="CompanyName" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="ContactName" Type="varchar2" MaxLength="30" />
+          <Property Name="ContactTitle" Type="varchar2" MaxLength="30" />
+          <Property Name="Address" Type="varchar2" MaxLength="60" />
+          <Property Name="City" Type="varchar2" MaxLength="32" />
+          <Property Name="Region" Type="varchar2" MaxLength="15" />
+          <Property Name="PostalCode" Type="varchar2" MaxLength="10" />
+          <Property Name="Country" Type="varchar2" MaxLength="15" />
+          <Property Name="Phone" Type="varchar2" MaxLength="24" />
+          <Property Name="Fax" Type="varchar2" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="LastName" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FirstName" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="Title" Type="varchar2" MaxLength="30" />
+          <Property Name="TitleOfCourtesy" Type="varchar2" MaxLength="25" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="HireDate" Type="date" />
+          <Property Name="Address" Type="varchar2" MaxLength="60" />
+          <Property Name="City" Type="varchar2" MaxLength="15" />
+          <Property Name="Region" Type="varchar2" MaxLength="15" />
+          <Property Name="PostalCode" Type="varchar2" MaxLength="10" />
+          <Property Name="Country" Type="varchar2" MaxLength="15" />
+          <Property Name="HomePhone" Type="varchar2" MaxLength="24" />
+          <Property Name="Extension" Type="varchar2" MaxLength="4" />
+          <Property Name="Photo" Type="blob" />
+          <Property Name="Notes" Type="clob" />
+          <Property Name="ReportsTo" Type="number" Precision="11" />
+          <Property Name="PhotoPath" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="EmployeesTerritories">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="TerritoryID" />
+          </Key>
+          <Property Name="EmployeeID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="TerritoryID" Type="number" Nullable="false" Precision="11" />
+        </EntityType>
+        <EntityType Name="InternationalOrders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="CustomsDescription" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="ExciseTax" Type="number" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OracleDataTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="GuidColumn" Type="raw" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="ProductID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="UnitPrice" Type="number" Nullable="false" />
+          <Property Name="Quantity" Type="number" Nullable="false" Precision="5" />
+          <Property Name="Discount" Type="number" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="CustomerID" Type="varchar2" MaxLength="5" />
+          <Property Name="EmployeeID" Type="number" Precision="11" />
+          <Property Name="OrderDate" Type="timestamp" />
+          <Property Name="RequiredDate" Type="timestamp" />
+          <Property Name="ShippedDate" Type="date" />
+          <Property Name="ShipVia" Type="number" Precision="11" />
+          <Property Name="Freight" Type="number" Precision="19" Scale="8" />
+          <Property Name="ShipName" Type="varchar2" MaxLength="40" />
+          <Property Name="ShipAddress" Type="varchar2" MaxLength="60" />
+          <Property Name="ShipCity" Type="varchar2" MaxLength="32" />
+          <Property Name="ShipRegion" Type="varchar2" MaxLength="15" />
+          <Property Name="ShipPostalCode" Type="varchar2" MaxLength="10" />
+          <Property Name="ShipCountry" Type="varchar2" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="PreviousEmployees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="LastName" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FirstName" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="Title" Type="varchar2" MaxLength="30" />
+          <Property Name="TitleOfCourtesy" Type="varchar2" MaxLength="25" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="HireDate" Type="date" />
+          <Property Name="Address" Type="varchar2" MaxLength="60" />
+          <Property Name="City" Type="varchar2" MaxLength="32" />
+          <Property Name="Region" Type="varchar2" MaxLength="15" />
+          <Property Name="PostalCode" Type="varchar2" MaxLength="10" />
+          <Property Name="Country" Type="varchar2" MaxLength="32" />
+          <Property Name="HomePhone" Type="varchar2" MaxLength="24" />
+          <Property Name="Extension" Type="varchar2" MaxLength="4" />
+          <Property Name="Photo" Type="blob" />
+          <Property Name="Notes" Type="clob" />
+          <Property Name="PhotoPath" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="ProductName" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="SupplierID" Type="number" Precision="11" />
+          <Property Name="CategoryID" Type="number" Precision="11" />
+          <Property Name="QuantityPerUnit" Type="varchar2" MaxLength="20" />
+          <Property Name="UnitPrice" Type="number" />
+          <Property Name="UnitsInStock" Type="number" Precision="5" />
+          <Property Name="UnitsOnOrder" Type="number" Precision="5" />
+          <Property Name="ReorderLevel" Type="number" Precision="5" />
+          <Property Name="Discontinued" Type="number" Nullable="false" Precision="3" />
+          <Property Name="DiscontinuedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="RegionDescription" Type="varchar2" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Shippers">
+          <Key>
+            <PropertyRef Name="ShipperID" />
+          </Key>
+          <Property Name="ShipperID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="CompanyName" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="Phone" Type="varchar2" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="CompanyName" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="ContactName" Type="varchar2" MaxLength="30" />
+          <Property Name="ContactTitle" Type="varchar2" MaxLength="30" />
+          <Property Name="Address" Type="varchar2" MaxLength="60" />
+          <Property Name="City" Type="varchar2" MaxLength="15" />
+          <Property Name="Region" Type="varchar2" MaxLength="15" />
+          <Property Name="PostalCode" Type="varchar2" MaxLength="10" />
+          <Property Name="Country" Type="varchar2" MaxLength="15" />
+          <Property Name="Phone" Type="varchar2" MaxLength="24" />
+          <Property Name="Fax" Type="varchar2" MaxLength="24" />
+          <Property Name="HomePage" Type="clob" />
+        </EntityType>
+        <EntityType Name="Territories">
+          <Key>
+            <PropertyRef Name="TerritoryID" />
+          </Key>
+          <Property Name="TerritoryID" Type="number" Nullable="false" Precision="11" />
+          <Property Name="TerritoryDescription" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="RegionID" Type="number" Nullable="false" Precision="11" />
+        </EntityType>
+        <Association Name="SYS_C007011">
+          <End Role="Employees" Type="OracleModel.Store.Employees" Multiplicity="0..1" />
+          <End Role="Employees1" Type="OracleModel.Store.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="ReportsTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007013">
+          <End Role="Shippers" Type="OracleModel.Store.Shippers" Multiplicity="0..1" />
+          <End Role="Orders" Type="OracleModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ShipperID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ShipVia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007014">
+          <End Role="Customers" Type="OracleModel.Store.Customers" Multiplicity="0..1" />
+          <End Role="Orders" Type="OracleModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007024">
+          <End Role="Categories" Type="OracleModel.Store.Categories" Multiplicity="0..1" />
+          <End Role="Products" Type="OracleModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007025">
+          <End Role="Suppliers" Type="OracleModel.Store.Suppliers" Multiplicity="0..1" />
+          <End Role="Products" Type="OracleModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007033">
+          <End Role="Regions" Type="OracleModel.Store.Regions" Multiplicity="1" />
+          <End Role="Territories" Type="OracleModel.Store.Territories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Territories">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007040">
+          <End Role="Orders" Type="OracleModel.Store.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="OracleModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007041">
+          <End Role="Products" Type="OracleModel.Store.Products" Multiplicity="1" />
+          <End Role="OrderDetails" Type="OracleModel.Store.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007045">
+          <End Role="Employees" Type="OracleModel.Store.Employees" Multiplicity="1" />
+          <End Role="EmployeesTerritories" Type="OracleModel.Store.EmployeesTerritories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeesTerritories">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007046">
+          <End Role="Territories" Type="OracleModel.Store.Territories" Multiplicity="1" />
+          <End Role="EmployeesTerritories" Type="OracleModel.Store.EmployeesTerritories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Territories">
+              <PropertyRef Name="TerritoryID" />
+            </Principal>
+            <Dependent Role="EmployeesTerritories">
+              <PropertyRef Name="TerritoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007051">
+          <End Role="Orders" Type="OracleModel.Store.Orders" Multiplicity="1" />
+          <End Role="InternationalOrders" Type="OracleModel.Store.InternationalOrders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="InternationalOrders">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OracleModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OracleNorthwindEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="OracleModel.Categories" />
+          <EntitySet Name="Customers" EntityType="OracleModel.Customers" />
+          <EntitySet Name="Employees" EntityType="OracleModel.Employees" />
+          <EntitySet Name="InternationalOrders" EntityType="OracleModel.InternationalOrders" />
+          <EntitySet Name="OracleDataTypes" EntityType="OracleModel.OracleDataTypes" />
+          <EntitySet Name="OrderDetails" EntityType="OracleModel.OrderDetails" />
+          <EntitySet Name="Orders" EntityType="OracleModel.Orders" />
+          <EntitySet Name="PreviousEmployees" EntityType="OracleModel.PreviousEmployees" />
+          <EntitySet Name="Products" EntityType="OracleModel.Products" />
+          <EntitySet Name="Regions" EntityType="OracleModel.Regions" />
+          <EntitySet Name="Shippers" EntityType="OracleModel.Shippers" />
+          <EntitySet Name="Suppliers" EntityType="OracleModel.Suppliers" />
+          <EntitySet Name="Territories" EntityType="OracleModel.Territories" />
+          <AssociationSet Name="SYS_C007024" Association="OracleModel.SYS_C007024">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007014" Association="OracleModel.SYS_C007014">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007011" Association="OracleModel.SYS_C007011">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007051" Association="OracleModel.SYS_C007051">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="InternationalOrders" EntitySet="InternationalOrders" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007040" Association="OracleModel.SYS_C007040">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007041" Association="OracleModel.SYS_C007041">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007013" Association="OracleModel.SYS_C007013">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007025" Association="OracleModel.SYS_C007025">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007033" Association="OracleModel.SYS_C007033">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Territories" EntitySet="Territories" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeesTerritories" Association="OracleModel.EmployeesTerritories">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Territories" EntitySet="Territories" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int64" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="2000" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="OracleModel.SYS_C007024" FromRole="Categories" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ContactName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ContactTitle" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="OracleModel.SYS_C007014" FromRole="Customers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TitleOfCourtesy" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" />
+          <Property Name="HireDate" Type="DateTime" />
+          <Property Name="Address" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="Extension" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ReportsTo" Type="Int64" />
+          <Property Name="PhotoPath" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Employees1" Relationship="OracleModel.SYS_C007011" FromRole="Employees" ToRole="Employees1" />
+          <NavigationProperty Name="Employees2" Relationship="OracleModel.SYS_C007011" FromRole="Employees1" ToRole="Employees" />
+          <NavigationProperty Name="Territories" Relationship="OracleModel.EmployeesTerritories" FromRole="Employees" ToRole="Territories" />
+        </EntityType>
+        <EntityType Name="InternationalOrders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int64" Nullable="false" />
+          <Property Name="CustomsDescription" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ExciseTax" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Orders" Relationship="OracleModel.SYS_C007051" FromRole="InternationalOrders" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OracleDataTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="GuidColumn" Type="Guid" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int64" Nullable="false" />
+          <Property Name="ProductID" Type="Int64" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Orders" Relationship="OracleModel.SYS_C007040" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="OracleModel.SYS_C007041" FromRole="OrderDetails" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int64" Nullable="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="EmployeeID" Type="Int64" />
+          <Property Name="OrderDate" Type="DateTime" Precision="6" />
+          <Property Name="RequiredDate" Type="DateTime" Precision="6" />
+          <Property Name="ShippedDate" Type="DateTime" />
+          <Property Name="ShipVia" Type="Int64" />
+          <Property Name="Freight" Type="Decimal" Precision="19" Scale="8" />
+          <Property Name="ShipName" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ShipAddress" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="ShipCity" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="ShipRegion" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ShipPostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ShipCountry" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Customers" Relationship="OracleModel.SYS_C007014" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="InternationalOrders" Relationship="OracleModel.SYS_C007051" FromRole="Orders" ToRole="InternationalOrders" />
+          <NavigationProperty Name="OrderDetails" Relationship="OracleModel.SYS_C007040" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Shippers" Relationship="OracleModel.SYS_C007013" FromRole="Orders" ToRole="Shippers" />
+        </EntityType>
+        <EntityType Name="PreviousEmployees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TitleOfCourtesy" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="BirthDate" Type="DateTime" />
+          <Property Name="HireDate" Type="DateTime" />
+          <Property Name="Address" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="Extension" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int64" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="SupplierID" Type="Int64" />
+          <Property Name="CategoryID" Type="Int64" />
+          <Property Name="QuantityPerUnit" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="UnitsInStock" Type="Int16" />
+          <Property Name="UnitsOnOrder" Type="Int16" />
+          <Property Name="ReorderLevel" Type="Int16" />
+          <Property Name="Discontinued" Type="Int16" Nullable="false" />
+          <Property Name="DiscontinuedDate" Type="DateTime" />
+          <NavigationProperty Name="Categories" Relationship="OracleModel.SYS_C007024" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="OrderDetails" Relationship="OracleModel.SYS_C007041" FromRole="Products" ToRole="OrderDetails" />
+          <NavigationProperty Name="Suppliers" Relationship="OracleModel.SYS_C007025" FromRole="Products" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int64" Nullable="false" />
+          <Property Name="RegionDescription" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Territories" Relationship="OracleModel.SYS_C007033" FromRole="Regions" ToRole="Territories" />
+        </EntityType>
+        <EntityType Name="Shippers">
+          <Key>
+            <PropertyRef Name="ShipperID" />
+          </Key>
+          <Property Name="ShipperID" Type="Int64" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="OracleModel.SYS_C007013" FromRole="Shippers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="Int64" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ContactName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ContactTitle" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="HomePage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="OracleModel.SYS_C007025" FromRole="Suppliers" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Territories">
+          <Key>
+            <PropertyRef Name="TerritoryID" />
+          </Key>
+          <Property Name="TerritoryID" Type="Int64" Nullable="false" />
+          <Property Name="TerritoryDescription" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RegionID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Regions" Relationship="OracleModel.SYS_C007033" FromRole="Territories" ToRole="Regions" />
+          <NavigationProperty Name="Employees" Relationship="OracleModel.EmployeesTerritories" FromRole="Territories" ToRole="Employees" />
+        </EntityType>
+        <Association Name="SYS_C007024">
+          <End Role="Categories" Type="OracleModel.Categories" Multiplicity="0..1" />
+          <End Role="Products" Type="OracleModel.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007014">
+          <End Role="Customers" Type="OracleModel.Customers" Multiplicity="0..1" />
+          <End Role="Orders" Type="OracleModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007011">
+          <End Role="Employees" Type="OracleModel.Employees" Multiplicity="0..1" />
+          <End Role="Employees1" Type="OracleModel.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="ReportsTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007051">
+          <End Role="Orders" Type="OracleModel.Orders" Multiplicity="1" />
+          <End Role="InternationalOrders" Type="OracleModel.InternationalOrders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="InternationalOrders">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007040">
+          <End Role="Orders" Type="OracleModel.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="OracleModel.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007041">
+          <End Role="Products" Type="OracleModel.Products" Multiplicity="1" />
+          <End Role="OrderDetails" Type="OracleModel.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007013">
+          <End Role="Shippers" Type="OracleModel.Shippers" Multiplicity="0..1" />
+          <End Role="Orders" Type="OracleModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ShipperID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ShipVia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007025">
+          <End Role="Suppliers" Type="OracleModel.Suppliers" Multiplicity="0..1" />
+          <End Role="Products" Type="OracleModel.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="SupplierID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007033">
+          <End Role="Regions" Type="OracleModel.Regions" Multiplicity="1" />
+          <End Role="Territories" Type="OracleModel.Territories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Territories">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeesTerritories">
+          <End Role="Employees" Type="OracleModel.Employees" Multiplicity="*" />
+          <End Role="Territories" Type="OracleModel.Territories" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OracleModelStoreContainer" CdmEntityContainer="OracleNorthwindEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="OracleModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="OracleModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="OracleModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleOfCourtesy" ColumnName="TitleOfCourtesy" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ReportsTo" ColumnName="ReportsTo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternationalOrders">
+            <EntityTypeMapping TypeName="OracleModel.InternationalOrders">
+              <MappingFragment StoreEntitySet="InternationalOrders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomsDescription" ColumnName="CustomsDescription" />
+                <ScalarProperty Name="ExciseTax" ColumnName="ExciseTax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OracleDataTypes">
+            <EntityTypeMapping TypeName="OracleModel.OracleDataTypes">
+              <MappingFragment StoreEntitySet="OracleDataTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GuidColumn" ColumnName="GuidColumn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="OracleModel.OrderDetails">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="OracleModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+                <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+                <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
+                <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
+                <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreviousEmployees">
+            <EntityTypeMapping TypeName="OracleModel.PreviousEmployees">
+              <MappingFragment StoreEntitySet="PreviousEmployees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleOfCourtesy" ColumnName="TitleOfCourtesy" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="OracleModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+                <ScalarProperty Name="DiscontinuedDate" ColumnName="DiscontinuedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="OracleModel.Regions">
+              <MappingFragment StoreEntitySet="Regions">
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shippers">
+            <EntityTypeMapping TypeName="OracleModel.Shippers">
+              <MappingFragment StoreEntitySet="Shippers">
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="OracleModel.Suppliers">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Territories">
+            <EntityTypeMapping TypeName="OracleModel.Territories">
+              <MappingFragment StoreEntitySet="Territories">
+                <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+                <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="EmployeesTerritories" TypeName="OracleModel.EmployeesTerritories" StoreEntitySet="EmployeesTerritories">
+            <EndProperty Name="Employees">
+              <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+            </EndProperty>
+            <EndProperty Name="Territories">
+              <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

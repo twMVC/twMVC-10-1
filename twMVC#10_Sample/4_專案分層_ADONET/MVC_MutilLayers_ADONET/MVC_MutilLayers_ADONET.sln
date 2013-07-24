@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_MutilLayers_ADONET", "MVC_MutilLayers_ADONET\MVC_MutilLayers_ADONET.csproj", "{E77EE1BF-C546-4191-B673-7BF46B7DFE7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Domain", "1.Domain", "{E4A9B111-6356-40A7-8CA3-8C61C8B2B4AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Repository", "2.Repository", "{ED5583E2-6947-43D5-8EC2-3E179AB738AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Web", "3.Web", "{680AD796-5423-4075-8CB8-EEA2BD2C8720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9F0300A2-5806-4B59-93E1-1B572E338B6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForm_MultiLayers_ADONET", "WebForm_MultiLayers_ADONET\WebForm_MultiLayers_ADONET.csproj", "{75DFCDBC-7FE4-4147-9318-59AFF6C57242}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Other", "4.Other", "{5E147186-40B5-4F93-AD9F-E7171D6946A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{538FEB5D-757C-4628-BBEE-0A043C6D201A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E77EE1BF-C546-4191-B673-7BF46B7DFE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77EE1BF-C546-4191-B673-7BF46B7DFE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77EE1BF-C546-4191-B673-7BF46B7DFE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E77EE1BF-C546-4191-B673-7BF46B7DFE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0300A2-5806-4B59-93E1-1B572E338B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0300A2-5806-4B59-93E1-1B572E338B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0300A2-5806-4B59-93E1-1B572E338B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0300A2-5806-4B59-93E1-1B572E338B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75DFCDBC-7FE4-4147-9318-59AFF6C57242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DFCDBC-7FE4-4147-9318-59AFF6C57242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DFCDBC-7FE4-4147-9318-59AFF6C57242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DFCDBC-7FE4-4147-9318-59AFF6C57242}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E77EE1BF-C546-4191-B673-7BF46B7DFE7F} = {680AD796-5423-4075-8CB8-EEA2BD2C8720}
+		{9F0300A2-5806-4B59-93E1-1B572E338B6C} = {E4A9B111-6356-40A7-8CA3-8C61C8B2B4AB}
+		{9BDB8F0B-3DE9-4904-8FF0-A2B676C73144} = {ED5583E2-6947-43D5-8EC2-3E179AB738AA}
+		{75DFCDBC-7FE4-4147-9318-59AFF6C57242} = {5E147186-40B5-4F93-AD9F-E7171D6946A7}
+	EndGlobalSection
+EndGlobal
